@@ -729,3 +729,7 @@ Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo can
 2021-06-24 23:00:42.845  INFO 18800 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 15.0.2 on LAPTOP-G9GJ4JUF with PID 18800 (C:\spring\work-space\EmployeePayrollApp\bin\main started by ASUS in C:\spring\work-space\EmployeePayrollApp)
 2021-06-24 23:00:42.846 DEBUG 18800 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Running with Spring Boot v2.5.1, Spring v5.3.8
 2021-06-24 23:00:42.847  INFO 18800 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : The following profiles are active: dev
+2021-06-24 23:00:43.901  WARN 18800 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-24 23:00:44.053  INFO 18800 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 1.333 seconds (JVM running for 1144.701)
+2021-06-24 23:00:44.056  INFO 18800 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll app started in DEV Environment
+2021-06-24 23:00:44.056  INFO 18800 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll DB user is emp_payrollDB 
