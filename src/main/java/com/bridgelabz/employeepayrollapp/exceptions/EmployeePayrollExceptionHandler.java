@@ -1,4 +1,4 @@
-package com.bridgelabz.employeepayrollapp.exceptins;
+package com.bridgelabz.employeepayrollapp.exceptions;
 
 import java.util.List;
 import java.util.stream.Collector;
@@ -25,5 +25,14 @@ public class EmployeePayrollExceptionHandler {
 											.collect(Collectors.toList());
 		ResponseDTO dto = new ResponseDTO("Exception while processing REST Request", errorMessage);
 		return new ResponseEntity<ResponseDTO>(dto, HttpStatus.BAD_REQUEST);
+	}
+	
+	@ExceptionHandler(IndexOutOfBoundsException.class)
+	public ResponseEntity<ResponseDTO> handleIndexOutOfBoundsException(
+			IndexOutOfBoundsException exception) {
+		ResponseDTO dto = new ResponseDTO("Exception while processing REST Request","Employee Not Found");
+		return new ResponseEntity<ResponseDTO>(dto, HttpStatus.BAD_REQUEST);
+
+
 	}
 }
