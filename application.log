@@ -298,3 +298,4 @@ java.util.NoSuchElementException: No value present
 2021-06-25 12:40:33.941  INFO 18800 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 0.81 seconds (JVM running for 50334.595)
 2021-06-25 12:40:33.944  INFO 18800 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll app started in DEV Environment
 2021-06-25 12:40:33.944  INFO 18800 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll DB user is emp_payrollDB 
+2021-06-25 12:40:46.970  WARN 18800 --- [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0]
