@@ -299,3 +299,33 @@ java.util.NoSuchElementException: No value present
 2021-06-25 12:40:33.944  INFO 18800 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll app started in DEV Environment
 2021-06-25 12:40:33.944  INFO 18800 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll DB user is emp_payrollDB 
 2021-06-25 12:40:46.970  WARN 18800 --- [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0]
+2021-06-25 12:45:54.106  INFO 18800 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 15.0.2 on LAPTOP-G9GJ4JUF with PID 18800 (C:\spring\work-space\EmployeePayrollApp\bin\main started by ASUS in C:\spring\work-space\EmployeePayrollApp)
+2021-06-25 12:45:54.107 DEBUG 18800 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Running with Spring Boot v2.5.1, Spring v5.3.8
+2021-06-25 12:45:54.107  INFO 18800 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : The following profiles are active: dev
+2021-06-25 12:45:54.920  WARN 18800 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-25 12:45:55.064  INFO 18800 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 1.004 seconds (JVM running for 50655.717)
+2021-06-25 12:45:55.067  INFO 18800 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll app started in DEV Environment
+2021-06-25 12:45:55.067  INFO 18800 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll DB user is emp_payrollDB 
+2021-06-25 14:22:46.408  WARN 18800 --- [HikariPool-28 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-28 - Thread starvation or clock leap detected (housekeeper delta=1h28m21s342ms177µs400ns).
+2021-06-25 15:44:31.726  INFO 18800 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 15.0.2 on LAPTOP-G9GJ4JUF with PID 18800 (C:\spring\work-space\EmployeePayrollApp\bin\main started by ASUS in C:\spring\work-space\EmployeePayrollApp)
+2021-06-25 15:44:31.729 DEBUG 18800 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Running with Spring Boot v2.5.1, Spring v5.3.8
+2021-06-25 15:44:31.729  INFO 18800 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : The following profiles are active: dev
+2021-06-25 15:44:33.355  WARN 18800 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-25 15:44:33.543  INFO 18800 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 2.003 seconds (JVM running for 61374.202)
+2021-06-25 15:44:33.546  INFO 18800 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll app started in DEV Environment
+2021-06-25 15:44:33.546  INFO 18800 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll DB user is emp_payrollDB 
+2021-06-25 15:46:05.914  INFO 18800 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 15.0.2 on LAPTOP-G9GJ4JUF with PID 18800 (C:\spring\work-space\EmployeePayrollApp\bin\main started by ASUS in C:\spring\work-space\EmployeePayrollApp)
+2021-06-25 15:46:05.915 DEBUG 18800 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Running with Spring Boot v2.5.1, Spring v5.3.8
+2021-06-25 15:46:05.915  INFO 18800 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : The following profiles are active: dev
+2021-06-25 15:46:07.327  WARN 18800 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-25 15:46:07.586  INFO 18800 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 1.797 seconds (JVM running for 61468.245)
+2021-06-25 15:46:07.588  INFO 18800 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll app started in DEV Environment
+2021-06-25 15:46:07.588  INFO 18800 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll DB user is emp_payrollDB 
+2021-06-25 16:41:09.514  WARN 18800 --- [HikariPool-30 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-30 - Thread starvation or clock leap detected (housekeeper delta=36m32s15ms542µs).
+2021-06-25 20:13:36.023  INFO 5456 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 15.0.2 on LAPTOP-G9GJ4JUF with PID 5456 (C:\spring\work-space\EmployeePayrollApp\bin\main started by ASUS in C:\spring\work-space\EmployeePayrollApp)
+2021-06-25 20:13:36.027 DEBUG 5456 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Running with Spring Boot v2.5.1, Spring v5.3.8
+2021-06-25 20:13:36.028  INFO 5456 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : The following profiles are active: dev
+2021-06-25 20:13:39.613  WARN 5456 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-25 20:13:40.180  INFO 5456 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 4.682 seconds (JVM running for 6.055)
+2021-06-25 20:13:40.186  INFO 5456 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll app started in DEV Environment
+2021-06-25 20:13:40.190  INFO 5456 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll DB user is emp_payrollDB 
