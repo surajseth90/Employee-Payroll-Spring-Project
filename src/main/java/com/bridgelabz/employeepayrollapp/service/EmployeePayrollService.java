@@ -1,12 +1,10 @@
 package com.bridgelabz.employeepayrollapp.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bridgelabz.addressbookapp.exception.AddressBookException;
 import com.bridgelabz.employeepayrollapp.dto.EmployeePayrollDTO;
 import com.bridgelabz.employeepayrollapp.exceptions.EmployeePayrollException;
 import com.bridgelabz.employeepayrollapp.model.EmployeePayrollData;
@@ -42,11 +40,17 @@ public class EmployeePayrollService implements IEmployeePayrollService {
 		employeePayrollData.updateEmployeePayrollData(dto);
 		return employeeRepo.save(employeePayrollData);
 	}
+	
+	@Override
+	public List<EmployeePayrollData> findEmployeeByDepartment(String department) {
+		return employeeRepo.findEmployeeByDepartment(department);
+	}
 
 	@Override
 	public void deleteEmployeePayrollData(int empId) {
 		employeeRepo.deleteById(empId);
 
 	}
+
 
 }
