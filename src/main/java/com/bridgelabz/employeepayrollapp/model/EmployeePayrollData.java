@@ -34,7 +34,7 @@ public class EmployeePayrollData {
 	public String gender;
 
 	@Column(name = "start_date")
-	private LocalDate startDate;
+	private String startDate;
 
 	private String note;
 

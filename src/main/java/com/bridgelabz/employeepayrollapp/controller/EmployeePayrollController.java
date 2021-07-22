@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,12 +24,13 @@ import com.bridgelabz.employeepayrollapp.service.IEmployeePayrollService;
 
 @RestController
 @RequestMapping("/employeepayroll")
+@CrossOrigin
 public class EmployeePayrollController {
 
 	@Autowired
 	private IEmployeePayrollService employeePayrollService;
 
-	@RequestMapping(value = { "", "/", "get" })
+	@GetMapping(value = { "", "/", "/get" })
 	public ResponseEntity<ResponseDTO> getEmpPayrollData() {
 		List<EmployeePayrollData> employeePayrollData = null;
 		employeePayrollData = employeePayrollService.getEmployeePayrollData();
@@ -47,7 +49,7 @@ public class EmployeePayrollController {
 	public ResponseEntity<ResponseDTO> getEmployeeDepartment(@PathVariable("department") String department) {
 		List<EmployeePayrollData> employeePayrollData = null;
 		employeePayrollData = employeePayrollService.findEmployeeByDepartment(department);
-		ResponseDTO dto = new ResponseDTO("Get Call for ID Successfull", employeePayrollData);
+		ResponseDTO dto = new ResponseDTO("Get Call Successfull", employeePayrollData);
 		return new ResponseEntity<ResponseDTO>(dto, HttpStatus.OK);
 	}
 

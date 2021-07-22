@@ -29,9 +29,9 @@ public class EmployeePayrollExceptionHandler {
 	}
 	
 	
-	@ExceptionHandler(IndexOutOfBoundsException.class)
-	public ResponseEntity<ResponseDTO> handleIndexOutOfBoundsException(
-			IndexOutOfBoundsException exception) {
+	@ExceptionHandler(EmployeePayrollException.class)
+	public ResponseEntity<ResponseDTO> handleEmployeePayrollException(
+			EmployeePayrollException exception) {
 		ResponseDTO dto = new ResponseDTO("Exception while processing REST Request","Employee Not Found");
 		return new ResponseEntity<ResponseDTO>(dto, HttpStatus.BAD_REQUEST);
 	}

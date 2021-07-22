@@ -1,167 +1,22 @@
-2021-06-28 10:54:54.880  WARN 12512 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12h57m58s412ms147µs600ns).
-2021-06-28 10:55:40.001  WARN 12512 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=45s486ms568µs700ns).
-2021-06-28 11:04:13.206  WARN 12512 --- [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.time.LocalDate` from String "29 10 2019": Failed to deserialize java.time.LocalDate: (java.time.format.DateTimeParseException) Text '29 10 2019' could not be parsed at index 3; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.time.LocalDate` from String "29 10 2019": Failed to deserialize java.time.LocalDate: (java.time.format.DateTimeParseException) Text '29 10 2019' could not be parsed at index 3
- at [Source: (PushbackInputStream); line: 1, column: 89] (through reference chain: com.bridgelabz.employeepayrollapp.dto.EmployeePayrollDTO["startDate"])]
-2021-06-28 11:04:33.940  WARN 12512 --- [http-nio-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.time.LocalDate` from String "29 OCT 2019": Failed to deserialize java.time.LocalDate: (java.time.format.DateTimeParseException) Text '29 OCT 2019' could not be parsed at index 3; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.time.LocalDate` from String "29 OCT 2019": Failed to deserialize java.time.LocalDate: (java.time.format.DateTimeParseException) Text '29 OCT 2019' could not be parsed at index 3
- at [Source: (PushbackInputStream); line: 1, column: 89] (through reference chain: com.bridgelabz.employeepayrollapp.dto.EmployeePayrollDTO["startDate"])]
-2021-06-28 11:04:42.060 ERROR 12512 --- [http-nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is javax.validation.UnexpectedTypeException: HV000030: No validator could be found for constraint 'javax.validation.constraints.NotBlank' validating type 'java.time.LocalDate'. Check configuration for 'startDate'] with root cause
-
-javax.validation.UnexpectedTypeException: HV000030: No validator could be found for constraint 'javax.validation.constraints.NotBlank' validating type 'java.time.LocalDate'. Check configuration for 'startDate'
-	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.getExceptionForNullValidator(ConstraintTree.java:116) ~[hibernate-validator-6.2.0.Final.jar:6.2.0.Final]
-	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.getInitializedConstraintValidator(ConstraintTree.java:162) ~[hibernate-validator-6.2.0.Final.jar:6.2.0.Final]
-	at org.hibernate.validator.internal.engine.constraintvalidation.SimpleConstraintTree.validateConstraints(SimpleConstraintTree.java:54) ~[hibernate-validator-6.2.0.Final.jar:6.2.0.Final]
-	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:75) ~[hibernate-validator-6.2.0.Final.jar:6.2.0.Final]
-	at org.hibernate.validator.internal.metadata.core.MetaConstraint.doValidateConstraint(MetaConstraint.java:130) ~[hibernate-validator-6.2.0.Final.jar:6.2.0.Final]
-	at org.hibernate.validator.internal.metadata.core.MetaConstraint.validateConstraint(MetaConstraint.java:123) ~[hibernate-validator-6.2.0.Final.jar:6.2.0.Final]
-	at org.hibernate.validator.internal.engine.ValidatorImpl.validateMetaConstraint(ValidatorImpl.java:555) ~[hibernate-validator-6.2.0.Final.jar:6.2.0.Final]
-	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForSingleDefaultGroupElement(ValidatorImpl.java:518) ~[hibernate-validator-6.2.0.Final.jar:6.2.0.Final]
-	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForDefaultGroup(ValidatorImpl.java:488) ~[hibernate-validator-6.2.0.Final.jar:6.2.0.Final]
-	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForCurrentGroup(ValidatorImpl.java:450) ~[hibernate-validator-6.2.0.Final.jar:6.2.0.Final]
-	at org.hibernate.validator.internal.engine.ValidatorImpl.validateInContext(ValidatorImpl.java:400) ~[hibernate-validator-6.2.0.Final.jar:6.2.0.Final]
-	at org.hibernate.validator.internal.engine.ValidatorImpl.validate(ValidatorImpl.java:172) ~[hibernate-validator-6.2.0.Final.jar:6.2.0.Final]
-	at org.springframework.validation.beanvalidation.SpringValidatorAdapter.validate(SpringValidatorAdapter.java:109) ~[spring-context-5.3.8.jar:5.3.8]
-	at org.springframework.boot.autoconfigure.validation.ValidatorAdapter.validate(ValidatorAdapter.java:65) ~[spring-boot-autoconfigure-2.5.1.jar:2.5.1]
-	at org.springframework.validation.DataBinder.validate(DataBinder.java:895) ~[spring-context-5.3.8.jar:5.3.8]
-	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.validateIfApplicable(AbstractMessageConverterMethodArgumentResolver.java:245) ~[spring-webmvc-5.3.8.jar:5.3.8]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:137) ~[spring-webmvc-5.3.8.jar:5.3.8]
-	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:121) ~[spring-web-5.3.8.jar:5.3.8]
-	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:170) ~[spring-web-5.3.8.jar:5.3.8]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:137) ~[spring-web-5.3.8.jar:5.3.8]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.8.jar:5.3.8]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894) ~[spring-webmvc-5.3.8.jar:5.3.8]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.8.jar:5.3.8]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.8.jar:5.3.8]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1063) ~[spring-webmvc-5.3.8.jar:5.3.8]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.8.jar:5.3.8]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.8.jar:5.3.8]
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.8.jar:5.3.8]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652) ~[tomcat-embed-core-9.0.46.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.8.jar:5.3.8]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.46.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.46.jar:9.0.46]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.8.jar:5.3.8]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.8.jar:5.3.8]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.8.jar:5.3.8]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.8.jar:5.3.8]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.8.jar:5.3.8]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.8.jar:5.3.8]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
-	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
-
-2021-06-28 11:04:50.164  WARN 12512 --- [http-nio-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.time.LocalDate` from String "29 oct 2019": Failed to deserialize java.time.LocalDate: (java.time.format.DateTimeParseException) Text '29 oct 2019' could not be parsed at index 3; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.time.LocalDate` from String "29 oct 2019": Failed to deserialize java.time.LocalDate: (java.time.format.DateTimeParseException) Text '29 oct 2019' could not be parsed at index 3
- at [Source: (PushbackInputStream); line: 1, column: 89] (through reference chain: com.bridgelabz.employeepayrollapp.dto.EmployeePayrollDTO["startDate"])]
-2021-06-28 11:08:54.297  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 15.0.2 on LAPTOP-G9GJ4JUF with PID 12512 (C:\spring\work-space\EmployeePayrollApp\bin\main started by ASUS in C:\spring\work-space\EmployeePayrollApp)
-2021-06-28 11:08:54.298 DEBUG 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Running with Spring Boot v2.5.1, Spring v5.3.8
-2021-06-28 11:08:54.298  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : The following profiles are active: dev
-2021-06-28 11:08:57.677  WARN 12512 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-06-28 11:08:57.864  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 3.715 seconds (JVM running for 54810.535)
-2021-06-28 11:08:57.868  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll app started in DEV Environment
-2021-06-28 11:08:57.868  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll DB user is emp_payrollDB 
-2021-06-28 11:14:24.881  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 15.0.2 on LAPTOP-G9GJ4JUF with PID 12512 (C:\spring\work-space\EmployeePayrollApp\bin\main started by ASUS in C:\spring\work-space\EmployeePayrollApp)
-2021-06-28 11:14:24.882 DEBUG 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Running with Spring Boot v2.5.1, Spring v5.3.8
-2021-06-28 11:14:24.882  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : The following profiles are active: dev
-2021-06-28 11:14:25.901  WARN 12512 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-06-28 11:14:26.083  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 1.268 seconds (JVM running for 55138.754)
-2021-06-28 11:14:26.086  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll app started in DEV Environment
-2021-06-28 11:14:26.086  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll DB user is emp_payrollDB 
-2021-06-28 11:14:29.862  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 15.0.2 on LAPTOP-G9GJ4JUF with PID 12512 (C:\spring\work-space\EmployeePayrollApp\bin\main started by ASUS in C:\spring\work-space\EmployeePayrollApp)
-2021-06-28 11:14:29.862 DEBUG 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Running with Spring Boot v2.5.1, Spring v5.3.8
-2021-06-28 11:14:29.862  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : The following profiles are active: dev
-2021-06-28 11:14:30.865  WARN 12512 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-06-28 11:14:31.069  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 1.299 seconds (JVM running for 55143.739)
-2021-06-28 11:14:31.074  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll app started in DEV Environment
-2021-06-28 11:14:31.075  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll DB user is emp_payrollDB 
-2021-06-28 11:19:52.726  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 15.0.2 on LAPTOP-G9GJ4JUF with PID 12512 (C:\spring\work-space\EmployeePayrollApp\bin\main started by ASUS in C:\spring\work-space\EmployeePayrollApp)
-2021-06-28 11:19:52.727 DEBUG 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Running with Spring Boot v2.5.1, Spring v5.3.8
-2021-06-28 11:19:52.727  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : The following profiles are active: dev
-2021-06-28 11:19:54.756  WARN 12512 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-06-28 11:19:54.925  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 2.259 seconds (JVM running for 55467.596)
-2021-06-28 11:19:54.929  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll app started in DEV Environment
-2021-06-28 11:19:54.929  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll DB user is emp_payrollDB 
-2021-06-28 11:20:14.268  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 15.0.2 on LAPTOP-G9GJ4JUF with PID 12512 (C:\spring\work-space\EmployeePayrollApp\bin\main started by ASUS in C:\spring\work-space\EmployeePayrollApp)
-2021-06-28 11:20:14.269 DEBUG 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Running with Spring Boot v2.5.1, Spring v5.3.8
-2021-06-28 11:20:14.270  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : The following profiles are active: dev
-2021-06-28 11:20:15.360  WARN 12512 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-06-28 11:20:15.553  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 1.577 seconds (JVM running for 55488.223)
-2021-06-28 11:20:15.557  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll app started in DEV Environment
-2021-06-28 11:20:15.557  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll DB user is emp_payrollDB 
-2021-06-28 11:24:47.310  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 15.0.2 on LAPTOP-G9GJ4JUF with PID 12512 (C:\spring\work-space\EmployeePayrollApp\bin\main started by ASUS in C:\spring\work-space\EmployeePayrollApp)
-2021-06-28 11:24:47.311 DEBUG 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Running with Spring Boot v2.5.1, Spring v5.3.8
-2021-06-28 11:24:47.311  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : The following profiles are active: dev
-2021-06-28 11:24:48.012  WARN 12512 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-06-28 11:24:48.105  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 0.83 seconds (JVM running for 55760.776)
-2021-06-28 11:24:48.107  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll app started in DEV Environment
-2021-06-28 11:24:48.108  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll DB user is emp_payrollDB 
-2021-06-28 11:24:59.037  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 15.0.2 on LAPTOP-G9GJ4JUF with PID 12512 (C:\spring\work-space\EmployeePayrollApp\bin\main started by ASUS in C:\spring\work-space\EmployeePayrollApp)
-2021-06-28 11:24:59.037 DEBUG 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Running with Spring Boot v2.5.1, Spring v5.3.8
-2021-06-28 11:24:59.037  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : The following profiles are active: dev
-2021-06-28 11:25:00.303  WARN 12512 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-06-28 11:25:00.419  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 1.434 seconds (JVM running for 55773.09)
-2021-06-28 11:25:00.421  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll app started in DEV Environment
-2021-06-28 11:25:00.421  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll DB user is emp_payrollDB 
-2021-06-28 11:26:33.571  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 15.0.2 on LAPTOP-G9GJ4JUF with PID 12512 (C:\spring\work-space\EmployeePayrollApp\bin\main started by ASUS in C:\spring\work-space\EmployeePayrollApp)
-2021-06-28 11:26:33.572 DEBUG 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Running with Spring Boot v2.5.1, Spring v5.3.8
-2021-06-28 11:26:33.572  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : The following profiles are active: dev
-2021-06-28 11:26:34.132  WARN 12512 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-06-28 11:26:34.217  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 0.677 seconds (JVM running for 55866.887)
-2021-06-28 11:26:34.218  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll app started in DEV Environment
-2021-06-28 11:26:34.218  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll DB user is emp_payrollDB 
-2021-06-28 11:26:59.335  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 15.0.2 on LAPTOP-G9GJ4JUF with PID 12512 (C:\spring\work-space\EmployeePayrollApp\bin\main started by ASUS in C:\spring\work-space\EmployeePayrollApp)
-2021-06-28 11:26:59.335 DEBUG 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Running with Spring Boot v2.5.1, Spring v5.3.8
-2021-06-28 11:26:59.335  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : The following profiles are active: dev
-2021-06-28 11:27:01.610  WARN 12512 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-06-28 11:27:01.682  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 2.372 seconds (JVM running for 55894.353)
-2021-06-28 11:27:01.684  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll app started in DEV Environment
-2021-06-28 11:27:01.684  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll DB user is emp_payrollDB 
-2021-06-28 11:28:42.377  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 15.0.2 on LAPTOP-G9GJ4JUF with PID 12512 (C:\spring\work-space\EmployeePayrollApp\bin\main started by ASUS in C:\spring\work-space\EmployeePayrollApp)
-2021-06-28 11:28:42.377 DEBUG 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Running with Spring Boot v2.5.1, Spring v5.3.8
-2021-06-28 11:28:42.377  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : The following profiles are active: dev
-2021-06-28 11:28:42.810  WARN 12512 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-06-28 11:28:42.884  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 0.532 seconds (JVM running for 55995.555)
-2021-06-28 11:28:42.886  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll app started in DEV Environment
-2021-06-28 11:28:42.886  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll DB user is emp_payrollDB 
-2021-06-28 11:28:52.477  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 15.0.2 on LAPTOP-G9GJ4JUF with PID 12512 (C:\spring\work-space\EmployeePayrollApp\bin\main started by ASUS in C:\spring\work-space\EmployeePayrollApp)
-2021-06-28 11:28:52.477 DEBUG 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Running with Spring Boot v2.5.1, Spring v5.3.8
-2021-06-28 11:28:52.477  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : The following profiles are active: dev
-2021-06-28 11:28:52.868  WARN 12512 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-06-28 11:28:52.936  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 0.484 seconds (JVM running for 56005.607)
-2021-06-28 11:28:52.937  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll app started in DEV Environment
-2021-06-28 11:28:52.938  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll DB user is emp_payrollDB 
-2021-06-28 11:31:06.664  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 15.0.2 on LAPTOP-G9GJ4JUF with PID 12512 (C:\spring\work-space\EmployeePayrollApp\bin\main started by ASUS in C:\spring\work-space\EmployeePayrollApp)
-2021-06-28 11:31:06.665 DEBUG 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Running with Spring Boot v2.5.1, Spring v5.3.8
-2021-06-28 11:31:06.665  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : The following profiles are active: dev
-2021-06-28 11:31:07.584  WARN 12512 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-06-28 11:31:07.700  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 1.127 seconds (JVM running for 56140.37)
-2021-06-28 11:31:07.702  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll app started in DEV Environment
-2021-06-28 11:31:07.702  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll DB user is emp_payrollDB 
-2021-06-28 11:32:21.727  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 15.0.2 on LAPTOP-G9GJ4JUF with PID 12512 (C:\spring\work-space\EmployeePayrollApp\bin\main started by ASUS in C:\spring\work-space\EmployeePayrollApp)
-2021-06-28 11:32:21.728 DEBUG 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Running with Spring Boot v2.5.1, Spring v5.3.8
-2021-06-28 11:32:21.729  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : The following profiles are active: dev
-2021-06-28 11:32:22.644  WARN 12512 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-06-28 11:32:22.809  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 1.185 seconds (JVM running for 56215.48)
-2021-06-28 11:32:22.814  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll app started in DEV Environment
-2021-06-28 11:32:22.815  INFO 12512 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll DB user is emp_payrollDB 
+2021-07-08 12:52:48.182  INFO 11600 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 15.0.2 on LAPTOP-G9GJ4JUF with PID 11600 (C:\spring\work-space\EmployeePayrollApp\bin\main started by ASUS in C:\spring\work-space\EmployeePayrollApp)
+2021-07-08 12:52:48.197 DEBUG 11600 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Running with Spring Boot v2.5.1, Spring v5.3.8
+2021-07-08 12:52:48.199  INFO 11600 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : The following profiles are active: dev
+2021-07-08 12:54:02.019  WARN 11600 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-07-08 12:54:21.554  INFO 11600 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 96.256 seconds (JVM running for 112.529)
+2021-07-08 12:54:21.566  INFO 11600 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll app started in DEV Environment
+2021-07-08 12:54:21.571  INFO 11600 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll DB user is emp_payrollDB 
+2021-07-08 14:42:04.455  INFO 12304 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 15.0.2 on LAPTOP-G9GJ4JUF with PID 12304 (C:\spring\work-space\EmployeePayrollApp\bin\main started by ASUS in C:\spring\work-space\EmployeePayrollApp)
+2021-07-08 14:42:04.464 DEBUG 12304 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Running with Spring Boot v2.5.1, Spring v5.3.8
+2021-07-08 14:42:04.464  INFO 12304 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : The following profiles are active: dev
+2021-07-08 14:42:13.467  WARN 12304 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-07-08 14:42:14.545  INFO 12304 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 10.771 seconds (JVM running for 12.552)
+2021-07-08 14:42:14.551  INFO 12304 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll app started in DEV Environment
+2021-07-08 14:42:14.553  INFO 12304 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll DB user is emp_payrollDB 
+2021-07-08 14:51:09.167  INFO 12716 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 15.0.2 on LAPTOP-G9GJ4JUF with PID 12716 (C:\spring\work-space\EmployeePayrollApp\bin\main started by ASUS in C:\spring\work-space\EmployeePayrollApp)
+2021-07-08 14:51:09.171 DEBUG 12716 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Running with Spring Boot v2.5.1, Spring v5.3.8
+2021-07-08 14:51:09.171  INFO 12716 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : The following profiles are active: dev
+2021-07-08 14:51:15.853  WARN 12716 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-07-08 14:51:16.998  INFO 12716 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 9.071 seconds (JVM running for 11.073)
+2021-07-08 14:51:17.007  INFO 12716 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll app started in DEV Environment
+2021-07-08 14:51:17.011  INFO 12716 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll DB user is emp_payrollDB 
+2021-07-08 16:54:05.661  WARN 12716 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h15m21s746ms508µs100ns).
